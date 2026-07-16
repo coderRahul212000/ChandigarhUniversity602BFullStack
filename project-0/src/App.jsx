@@ -1,50 +1,30 @@
 
 import './App.css'
 import { StudentComponent } from './components/StudentComponent'
+import { useState } from 'react'
 
 function App() {
-   
-  let studentInformation = [
-    {
-      name: "Transformer1",
-      age: 1006,
-      course: "Transform"
-    },
-    {
-      name: "Transformer2",
-      age: 1007,
-      course: "Btech"
-    },
-    {
-      name: "Transformer3",
-      age: 1008,
-      course: "Btech Civil"
-    },
-    {name: "Transformer4",
-      age: 1009,
-      course: "Btech Mechanical"},
-    {name: "Transformer5",
-      age: 1010,
-      course: "Btech Ai "},
-    {name: "Transformer6",
-      age: 1011,
-      course: "Btech Printing "},
-      {name: "Transformer7",
-      age: 1011,
-      course: "Btech Printing "}
-  ]
+   // state
+   const [count, setCount] = useState(0);
+   const increment = () =>{
+      setCount(count + 1);
+   }
+
+    const decement = () =>{
+      setCount(count - 1);
+   }
+  
+  
+ 
 
   return (
+
     <>
-      
-       {studentInformation.map(transformer => (
-        <StudentComponent 
-          name={transformer.name}
-          age = {transformer.age}
-          course = {transformer.course}
-          
-          />
-       ))}
+       <h1>React Counter</h1>
+       <h2>{count}</h2>
+       <button onClick={increment}>+</button>
+       <button onClick={decement}>-</button>
+       
     </>
    
   )
