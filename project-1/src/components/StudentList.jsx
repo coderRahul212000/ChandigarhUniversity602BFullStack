@@ -6,14 +6,16 @@ export const StudentList = ({students}) => {
     <div style={{
         padding: "20px",
         flex : "1",
+        backgroundColor: "whitesmoke",
+        margin: "2px"
     }}>
         <h2>Student Records</h2>
        {
-            students.map((student) => {
+            students.map((student) => (
                         <StudentCard
                           student = {student}
                         />
-            })
+            ))
        }
         
     </div>
